@@ -1,5 +1,0 @@
-#!/bin/bash -x
-echo "Hello from linter"
-cat "${GITHUB_EVENT_PATH}"
-env
-ruby -e "puts 'hello from Ruby'"
