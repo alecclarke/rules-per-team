@@ -1,2 +1,4 @@
 #!/bin/bash
 echo "Hello from linter"
+env
+ruby -e "puts 'hello from Ruby'"
