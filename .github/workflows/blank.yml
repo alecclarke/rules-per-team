@@ -12,9 +12,13 @@ jobs:
     - uses: actions/setup-node@v1
     - name: Crew team checks
       run: npm run team-check crew
+      env:
+        GITHUB_TOKEN: {{ $secrets.ACTIONS_TOKEN }}
     - if: success()
       run: echo "You're on the crew team!"
     - name: Others team checks
       run: npm run team-check others
+      env:
+        GITHUB_TOKEN: {{ $secrets.ACTIONS_TOKEN }}
     - if: success()
       run: echo "You're on the others team!"
