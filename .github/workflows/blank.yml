@@ -11,8 +11,10 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
     - name: Crew team checks
-      if: npm run team-check crew
+      run: npm run team-check crew
+    - if: success()
       run: echo "You're on the crew team!"
     - name: Others team checks
-      if: npm run team-check others
+      run: npm run team-check others
+    - if: success()
       run: echo "You're on the others team!"
