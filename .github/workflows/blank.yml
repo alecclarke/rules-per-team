@@ -9,6 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - if: node ./index.js
-    - name: Team check
-      run: echo "You're on the team!"
+    - name: Crew team checks
+      if: node ./index.js crew
+      run: echo "You're on the crew team!"
+    - name: Others team checks
+      if: node ./index.js others
+      run: echo "You're on the others team!"
